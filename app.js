@@ -5,12 +5,16 @@ const usernameRequirements = document.querySelector(".username-requirements");
 function validateUsername() {
   // TODO Check for length checkForMinLength(username, 3)
   // TODO Check for contains only characters and letters
-  return checkForLettersAndNumbers(username) && checkForMinLength(username, 3);
+  return (
+    checkForLettersAndNumbers(username) &&
+    checkForMinAndMaxLength(username, 3, 10)
+  );
 }
 
 // Utility
-function checkForMinLength(input, minLength) {
-  if (input.value.length < minLength) return false;
+function checkForMinAndMaxLength(input, minLength, maxLength) {
+  if (input.value.length < minLength || input.value.length > maxLength)
+    return false;
   return true;
 }
 
