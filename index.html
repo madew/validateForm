@@ -32,21 +32,37 @@
               </li>
             </ul>
           </div>
-
-          <label for="password-input">Password</label>
-          <input
-            class="u-full-width"
-            type="password"
-            placeholder="Password"
-            id="password-input"
-          />
-          <label for="repeat-password-input">Repeat Password</label>
-          <input
-            class="u-full-width"
-            type="password"
-            placeholder="Repeat password"
-            id="repeat-password-input"
-          />
+          <div class="row">
+            <label for="password-input">Password</label>
+            <input
+              class="u-full-width"
+              type="password"
+              placeholder="Password"
+              id="password-input"
+            />
+            <ul class="password-requirements">
+              <li>
+                Password must contain at least one uppercase letter, one
+                lowercase letter, one number and one special character, at least
+                8 character long.
+              </li>
+            </ul>
+          </div>
+          <div class="row">
+            <label for="repeat-password-input">Repeat Password</label>
+            <input
+              class="u-full-width"
+              type="password"
+              placeholder="Repeat password"
+              id="repeat-password-input"
+            />
+            <ul class="repeat-password-requirements">
+              <li>
+                Repeated password need match with password.
+              </li>
+            </ul>
+          </div>
+          <div class="row"></div>
           <input
             class="button-primary center"
             type="submit"

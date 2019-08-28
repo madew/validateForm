@@ -1,8 +1,7 @@
-.username-requirements {
-  font-size: 1.25rem;
-}
-.username-requirements li {
-  margin: 0;
+.username-requirements,
+.password-requirements,
+.repeat-password-requirements {
+  font-size: 1.1rem;
 }
 .valid {
   color: green;
