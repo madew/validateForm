@@ -4,7 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Form Valid</title>
+    <!-- Skeleton CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <div class="six columns">
+        <h4>Register Form</h4>
+        <form id="register-form" action="">
+          <div class="row">
+            <label for="username-input">Username</label>
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="Username"
+              id="username-input"
+            />
+            <ul class="input-requirements">
+              <li>At least 3 characters long</li>
+              <li>
+                Must only contains characters and letters(no special characters)
+              </li>
+            </ul>
+          </div>
+
+          <label for="password-input">Password</label>
+          <input
+            class="u-full-width"
+            type="password"
+            placeholder="Password"
+            id="password-input"
+          />
+          <label for="repeat-password-input">Repeat Password</label>
+          <input
+            class="u-full-width"
+            type="password"
+            placeholder="Repeat password"
+            id="repeat-password-input"
+          />
+          <input
+            class="button-primary center"
+            type="submit"
+            value="submit input"
+          />
+        </form>
+      </div>
+      <div class="six columns"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
 </html>

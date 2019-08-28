@@ -1,0 +1,19 @@
+.input-requirements {
+  font-size: 1.25rem;
+}
+.input-requirements li {
+  margin: 0;
+}
+.valid {
+  color: green;
+  position: relative;
+}
+.valid::after {
+  content: " \02713";
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.invalid {
+  color: tomato;
+}
