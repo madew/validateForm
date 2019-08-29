@@ -16,3 +16,21 @@
 .invalid {
   color: tomato;
 }
+
+.success {
+  background: green;
+  padding: 8px 16px;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.alert {
+  background: tomato;
+  padding: 8px 16px;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
