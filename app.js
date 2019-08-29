@@ -11,7 +11,7 @@ const repeatPasswordRequirements = document.querySelector(
 function validateUsername() {
   return (
     checkForLettersAndNumbers(username) &&
-    checkForMinAndMaxLength(username, 3, 10)
+    checkForMinAndMaxLength(username, 3, 20)
   );
 }
 
@@ -47,31 +47,30 @@ function checkForCorrectPassword(input) {
 
 // Event Listeners
 username.addEventListener("keyup", () => {
-  if (validateUsername()) {
-    usernameRequirements.firstElementChild.classList.add("valid");
-    usernameRequirements.firstElementChild.classList.remove("invalid");
-  } else {
-    usernameRequirements.firstElementChild.classList.add("invalid");
-    usernameRequirements.firstElementChild.classList.remove("valid");
-  }
+  validateUsername()
+    ? toggleValidRequirements(usernameRequirements)
+    : toggleInvalidRequirements(usernameRequirements);
 });
 
 password.addEventListener("keyup", () => {
-  if (validatePassword()) {
-    passwordRequirements.firstElementChild.classList.add("valid");
-    passwordRequirements.firstElementChild.classList.remove("invalid");
-  } else {
-    passwordRequirements.firstElementChild.classList.add("invalid");
-    passwordRequirements.firstElementChild.classList.remove("valid");
-  }
+  validatePassword()
+    ? toggleValidRequirements(passwordRequirements)
+    : toggleInvalidRequirements(passwordRequirements);
 });
 
 repeatPassword.addEventListener("keyup", () => {
-  if (validateRepeatedPassword()) {
-    repeatPasswordRequirements.firstElementChild.classList.add("valid");
-    repeatPasswordRequirements.firstElementChild.classList.remove("invalid");
-  } else {
-    repeatPasswordRequirements.firstElementChild.classList.add("invalid");
-    repeatPasswordRequirements.firstElementChild.classList.remove("valid");
-  }
+  validateRepeatedPassword()
+    ? toggleValidRequirements(repeatPasswordRequirements)
+    : toggleInvalidRequirements(repeatPasswordRequirements);
 });
+
+// DOM Manipulation
+function toggleValidRequirements(target) {
+  target.firstElementChild.classList.add("valid");
+  target.firstElementChild.classList.remove("invalid");
+}
+
+function toggleInvalidRequirements(target) {
+  target.firstElementChild.classList.add("invalid");
+  target.firstElementChild.classList.remove("valid");
+}
