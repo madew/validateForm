@@ -6,6 +6,7 @@ const passwordRequirements = document.querySelector(".password-requirements");
 const repeatPasswordRequirements = document.querySelector(
   ".repeat-password-requirements"
 );
+const registerForm = document.getElementById("register-form");
 
 // Validators
 function validateUsername() {
@@ -64,6 +65,15 @@ repeatPassword.addEventListener("keyup", () => {
     : toggleInvalidRequirements(repeatPasswordRequirements);
 });
 
+registerForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+  if (validateUsername() && validatePassword() && validateRepeatedPassword()) {
+    displayMessage(registerForm, "User successfully registered.", "success");
+  } else {
+    displayMessage(registerForm, "Fill all inputs properly", "alert");
+  }
+});
+
 // DOM Manipulation
 function toggleValidRequirements(target) {
   target.firstElementChild.classList.add("valid");
@@ -73,4 +83,14 @@ function toggleValidRequirements(target) {
 function toggleInvalidRequirements(target) {
   target.firstElementChild.classList.add("invalid");
   target.firstElementChild.classList.remove("valid");
+}
+
+function displayMessage(target, message, type) {
+  const element = document.createElement("div");
+  element.innerText = message;
+  element.classList.add(type);
+  target.insertAdjacentElement("beforeend", element);
+  setTimeout(() => {
+    element.remove();
+  }, 3000);
 }
